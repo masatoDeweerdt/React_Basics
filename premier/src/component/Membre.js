@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
-const Membre = (props) => {
-    const name = props.nom
-    console.log(props)
-
+const Membre = ({ nom, age, children }) => {
     return (
-        <h2>Membre de ma famille : { name.toUpperCase()}</h2>
+        <Fragment>
+            <h2>{nom.toUpperCase()} - Age : {age}</h2>
+            { children ? <p>{children} </p> : <Fragment />}
+        </Fragment>
     )
 }
 
